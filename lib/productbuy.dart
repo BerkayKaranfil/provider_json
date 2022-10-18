@@ -17,12 +17,12 @@ class _ProductBuyState extends State<ProductBuy> {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, Item item, widget) {
-        item.price = "${item.getPrice().toString()} TL";
+       // item.price = "${item.getPrice().toString()} TL";
         return Scaffold(
           appBar: AppBar(title: Text("Sepetteki ürün | ${item.basket!.length} |")),
           body: Stack(
             children: [
-              item.basket!.isEmpty ? Text("Sepetiniz Boş"):
+              item.basket!.isEmpty ? Center(child: Text("Sepetiniz Boş", style: TextStyle(fontSize: 30),)):
               ListView.builder(
                 itemCount: item.basket!.length,
                 itemBuilder: ((context, index) {
@@ -42,18 +42,18 @@ class _ProductBuyState extends State<ProductBuy> {
                                 child: SizedBox(
                                   width: 7.w,
                                   height: 7.h,
-                                  child: Image.network("${item.products![index]["image"]}"),
+                                  child: Image.network("${item.basket![index]["image"]}"),
                                 ),
                               ),
                               SizedBox(
                                 width: 2.w,
                               ),
-                              Text("${item.products![index]["title"]}",style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),),
+                              Text("${item.basket![index]["title"]}",style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),),
                             ],
                           ),
                           InkWell(
                             onTap: () {
-                              item.addBasket(item.products![index]);
+                              item.removeBasket(index);
                             },
                             child: Container(
                               width: 4.h,
@@ -61,7 +61,7 @@ class _ProductBuyState extends State<ProductBuy> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(.7.h)),
-                              child: Icon(Icons.add_shopping_cart_rounded),
+                              child: Icon(Icons.close),
                             ),
                           )
                         ],
@@ -69,7 +69,29 @@ class _ProductBuyState extends State<ProductBuy> {
                       decoration: BoxDecoration(color: Colors.blue),
                     );
               })),
-              // positioned buraya yazılacak ----->>>>>
+              Positioned(
+                bottom: 2.h,
+                child: Container(
+                  width: 92.w,
+                  height: 8.h,
+                  padding: EdgeInsets.only(left: 4.w),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Ürün Fiyat Toplamı : ${item.price}",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.sp),
+                      )
+                    ],
+                  ),
+                  margin: EdgeInsets.only(left: 4.w, right: 4.w),
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(2.w)),
+                )),
+              
             ],
           )
           /* Column(
