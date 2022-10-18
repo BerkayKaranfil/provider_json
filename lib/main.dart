@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_json/item.dart';
+import 'package:provider_json/products.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
@@ -18,11 +19,12 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider<Item>(create: ((context) => Item(0)))
           ],
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            home: ProductsScreen()
           ));
     }));
   }
