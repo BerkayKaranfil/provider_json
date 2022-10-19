@@ -51,24 +51,24 @@ class Item with ChangeNotifier {
   List? products = [
     {
       "image":
-          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-sUih_YSpnog%2FVI3J8qbMjmI%2FAAAAAAAAJEA%2F30OcPUhiAdw%2Fs1600%2FLGTribute2.jpg",
-      "title":"Telefon 1",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6b2fIwLB1t73eAh_etV1ql2qTxAZyhyi2MA&usqp=CAU",
+      "title":"Samsung s22",
       "description": "ürün hakkındaki açıklama",
-      "price": 117,
+      "price": 89,
     },
     {
       "image":
-          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.techgadgets.in%2Fimages%2Flg-ku580-phone.jpg",
-      "title":"Telefon 2",
+          "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1663938725354/1-1663938713760/1-1663938713760_600x450.png",
+      "title":"Iphone 14",
       "description": "ürün hakkındaki açıklama",
-      "price": 117,
+      "price": 122,
     },
     {
       "image":
-          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geeknaut.com%2Fimages%2F2011%2F09%2FVerizon-LG-Octane.jpg",
-      "title":"Telefon 3",
+          "https://cdn.cimri.io/image/1000x1000/xiaomi-11t-pro-5g-256gb-8gb-ram-667-inc-108mp-akilli-cep-telefonu-beyaz_499682007.jpg",
+      "title":"Xiaomi 11t",
       "description": "ürün hakkındaki açıklama",
-      "price": 117,
+      "price": 25,
     },
   ];
 }

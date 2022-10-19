@@ -48,7 +48,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                   itemBuilder: ((context, index) {
                     return Container(
                       width: 100.w,
-                      height: 8.h,
+                      height: 10.h,
                       margin: EdgeInsets.only(bottom: 1.h),
                       padding: EdgeInsets.only(right: 3.w, left: 3.w),
                       // ignore: sort_child_properties_last
@@ -60,8 +60,8 @@ class _ProductsScreenState extends State<ProductsScreen> {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(4.w),
                                 child: SizedBox(
-                                  width: 7.w,
-                                  height: 7.h,
+                                  width: 10.w,
+                                  height: 10.h,
                                   child: Image.network("${item.products![index]["image"]}"),
                                 ),
                               ),
@@ -71,18 +71,26 @@ class _ProductsScreenState extends State<ProductsScreen> {
                               Text("${item.products![index]["title"]}",style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),),
                             ],
                           ),
-                          InkWell(
-                            onTap: () {
-                              item.addBasket(item.products![index]);
-                            },
-                            child: Container(
-                              width: 4.h,
-                              height: 4.h,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(.7.h)),
-                              child: Icon(Icons.add_shopping_cart_rounded),
-                            ),
+                          Row(
+                            children: [
+                              Text("${item.products![index]["price"]} TL", style: TextStyle(fontWeight: FontWeight.bold),),
+                              SizedBox(
+                                width: 2.w,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  item.addBasket(item.products![index]);
+                                },
+                                child: Container(
+                                  width: 4.h,
+                                  height: 4.h,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(.7.h)),
+                                  child: Icon(Icons.add_shopping_cart_rounded),
+                                ),
+                              ),
+                            ],
                           )
                         ],
                       ),
